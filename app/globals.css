@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Fredoka+One&display=swap");
+
+:root {
+  --pink: #ff6eb4;
+  --pink-light: #ffb3d9;
+  --purple: #a855f7;
+  --purple-light: #c084fc;
+  --blue: #38bdf8;
+  --blue-light: #7dd3fc;
+  --yellow: #fbbf24;
+  --mint: #34d399;
+  --bg: #fdf4ff;
+  --surface: rgba(255, 255, 255, 0.7);
+  --border: rgba(168, 85, 247, 0.15);
+  --text: #3b1d6e;
+  --text-muted: #9d6fb8;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Nunito", sans-serif;
+  color: var(--text);
+}
+
+::selection {
+  background: var(--pink-light);
+  color: var(--text);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3e8ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--pink), var(--purple));
+  border-radius: 99px;
+}

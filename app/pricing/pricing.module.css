@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap");
+
+.main {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  font-family: "Nunito", sans-serif;
+  color: #3b1d6e;
+  background: #fdf4ff;
+}
+
+/* ─── Blobs ─── */
+.blob1,.blob2,.blob3 { position:fixed;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;animation:floatBlob 9s ease-in-out infinite alternate; }
+.blob1 { width:600px;height:600px;background:radial-gradient(circle,rgba(255,110,180,0.16),transparent 70%);top:-120px;left:-100px; }
+.blob2 { width:500px;height:500px;background:radial-gradient(circle,rgba(168,85,247,0.13),transparent 70%);top:40%;right:-80px;animation-delay:-3s; }
+.blob3 { width:400px;height:400px;background:radial-gradient(circle,rgba(56,189,248,0.13),transparent 70%);bottom:5%;left:15%;animation-delay:-6s; }
+@keyframes floatBlob { from{transform:translate(0,0)scale(1)}to{transform:translate(28px,18px)scale(1.07)} }
+
+/* ─── Navbar ─── */
+.nav { position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(253,244,255,0.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(168,85,247,0.1); }
+.navLogo { display:flex;align-items:center;gap:8px;text-decoration:none; }
+.logoIcon { font-size:22px;animation:spin 6s linear infinite;display:inline-block; }
+@keyframes spin { to{transform:rotate(360deg)} }
+.logoText { font-family:"Fredoka One",cursive;font-size:22px;background:linear-gradient(135deg,#ff6eb4,#a855f7,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.navLinks { display:flex;gap:4px; }
+.navLink { text-decoration:none;color:#7c3aed;font-weight:700;font-size:14px;padding:6px 14px;border-radius:99px;transition:background 0.2s; }
+.navLink:hover { background:rgba(168,85,247,0.1); }
+.navLinkActive { background:rgba(168,85,247,0.1);color:#a855f7; }
+.navRight { display:flex;align-items:center;gap:10px;position:relative; }
+.navCta { background:linear-gradient(135deg,#ff6eb4,#a855f7);color:white;border:none;border-radius:99px;padding:8px 20px;font-family:"Nunito",sans-serif;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 15px rgba(168,85,247,0.3);transition:transform 0.2s,box-shadow 0.2s; }
+.navCta:hover { transform:translateY(-2px);box-shadow:0 6px 20px rgba(168,85,247,0.4); }
+
+/* ─── Lang picker ─── */
+.langPicker { position:relative; }
+.langBtn { display:flex;align-items:center;gap:6px;background:rgba(247,240,255,0.8);border:1.5px solid rgba(168,85,247,0.2);border-radius:99px;padding:6px 12px;font-family:"Nunito",sans-serif;font-size:13px;font-weight:700;color:#7c3aed;cursor:pointer;transition:all 0.2s; }
+.langBtn:hover { border-color:#a855f7;background:rgba(168,85,247,0.08); }
+.langBtnLabel { max-width:60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.langChevron { font-size:11px;transition:transform 0.2s;display:inline-block; }
+.langChevronOpen { transform:rotate(180deg); }
+.langDropdown { position:absolute;top:calc(100% + 8px);right:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(16px);border:1.5px solid rgba(168,85,247,0.15);border-radius:16px;box-shadow:0 8px 32px rgba(168,85,247,0.15);overflow:hidden;min-width:140px;z-index:200;animation:dropIn 0.15s ease; }
+@keyframes dropIn { from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)} }
+.langOption { display:flex;align-items:center;gap:8px;width:100%;padding:9px 14px;background:none;border:none;font-family:"Nunito",sans-serif;font-size:13px;font-weight:700;color:#7c3aed;cursor:pointer;transition:background 0.15s;text-align:left; }
+.langOption:hover { background:rgba(168,85,247,0.07); }
+.langOptionActive { background:linear-gradient(135deg,rgba(255,110,180,0.1),rgba(168,85,247,0.1));color:#a855f7; }
+
+/* ─── Hero ─── */
+.hero { position:relative;z-index:1;text-align:center;padding:72px 24px 48px; }
+.heroTag { display:inline-flex;align-items:center;gap:6px;background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.2);color:#7c3aed;font-size:13px;font-weight:800;padding:6px 18px;border-radius:99px;margin-bottom:20px;animation:fadeUp 0.5s ease both; }
+.heroTitle { font-family:"Fredoka One",cursive;font-size:clamp(32px,5vw,58px);color:#3b1d6e;margin-bottom:14px;animation:fadeUp 0.5s ease 0.1s both;line-height:1.2; }
+.heroSubtitle { font-size:17px;color:#9d6fb8;font-weight:600;max-width:520px;margin:0 auto 32px;animation:fadeUp 0.5s ease 0.2s both; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)} }
+
+/* Billing toggle */
+.billingToggle { display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,0.7);backdrop-filter:blur(12px);border:1.5px solid rgba(168,85,247,0.15);border-radius:99px;padding:8px 20px;animation:fadeUp 0.5s ease 0.3s both; }
+.billingLabel { font-size:14px;font-weight:700;color:#c084fc;transition:color 0.2s; }
+.billingLabelActive { color:#7c3aed; }
+.toggleTrack { width:44px;height:24px;background:#e9d5ff;border-radius:99px;border:none;cursor:pointer;position:relative;transition:background 0.25s; }
+.toggleTrackOn { background:linear-gradient(135deg,#ff6eb4,#a855f7); }
+.toggleThumb { position:absolute;top:3px;left:3px;width:18px;height:18px;background:white;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,0.15);transition:left 0.25s cubic-bezier(0.4,0,0.2,1); }
+.toggleThumbOn { left:23px; }
+.saveBadge { background:linear-gradient(135deg,#34d399,#059669);color:white;font-size:11px;font-weight:800;padding:3px 10px;border-radius:99px; }
+
+/* Sparkles */
+.sparkle1,.sparkle2,.sparkle3 { position:absolute;pointer-events:none;animation:twinkle 3s ease-in-out infinite; }
+.sparkle1 { top:22%;left:6%;font-size:24px;color:#ff6eb4;animation-delay:0s; }
+.sparkle2 { top:55%;right:5%;font-size:20px;color:#a855f7;animation-delay:1s; }
+.sparkle3 { top:30%;right:8%;font-size:16px;color:#38bdf8;animation-delay:0.5s; }
+@keyframes twinkle { 0%,100%{opacity:0.3;transform:scale(0.8) rotate(0deg)}50%{opacity:1;transform:scale(1.2) rotate(15deg)} }
+
+/* ─── Plans ─── */
+.plansSection { position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1060px;margin:0 auto;padding:0 24px 56px;align-items:start; }
+@media(max-width:860px) { .plansSection{grid-template-columns:1fr;max-width:440px;} }
+
+.planCard { position:relative;background:rgba(255,255,255,0.75);backdrop-filter:blur(20px);border-radius:28px;padding:32px 28px 28px;border:2px solid rgba(168,85,247,0.12);box-shadow:0 8px 32px rgba(168,85,247,0.07);transition:transform 0.3s,box-shadow 0.3s;display:flex;flex-direction:column;gap:0; }
+.planCard:hover { transform:translateY(-6px);box-shadow:0 16px 48px rgba(168,85,247,0.13); }
+.planCard_blue  { border-color:rgba(56,189,248,0.25); }
+.planCard_purple { border-color:rgba(168,85,247,0.35); }
+.planCard_pink  { border-color:rgba(255,110,180,0.35); }
+
+.planCardPopular { transform:scale(1.03);box-shadow:0 20px 56px rgba(168,85,247,0.18);border-color:#a855f7 !important;background:linear-gradient(160deg,rgba(255,255,255,0.92),rgba(248,240,255,0.92));z-index:2; }
+.planCardPopular:hover { transform:scale(1.03) translateY(-6px); }
+
+.popularBadge { position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#ff6eb4,#a855f7);color:white;font-size:12px;font-weight:800;padding:5px 18px;border-radius:99px;white-space:nowrap;box-shadow:0 4px 16px rgba(168,85,247,0.35); }
+
+.planHeader { text-align:center;margin-bottom:20px; }
+.planEmoji { font-size:40px;margin-bottom:10px;display:block; }
+.planName { font-family:"Fredoka One",cursive;font-size:26px;color:#3b1d6e;margin-bottom:4px; }
+.planTag { font-size:13px;color:#9d6fb8;font-weight:600; }
+
+.planPrice { display:flex;align-items:flex-end;justify-content:center;gap:2px;margin-bottom:20px; }
+.priceCurrency { font-family:"Fredoka One",cursive;font-size:22px;color:#a855f7;line-height:1;margin-bottom:8px; }
+.priceAmount { font-family:"Fredoka One",cursive;font-size:64px;line-height:1;background:linear-gradient(135deg,#7c3aed,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.planCard_pink .priceAmount { background:linear-gradient(135deg,#db2777,#ff6eb4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.planCard_blue .priceAmount { background:linear-gradient(135deg,#0284c7,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.pricePer { font-size:12px;color:#9d6fb8;font-weight:700;margin-bottom:10px;max-width:80px;line-height:1.3; }
+
+.imagesHighlight { display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(168,85,247,0.07);border:1.5px dashed rgba(168,85,247,0.25);border-radius:14px;padding:10px 16px;margin-bottom:20px; }
+.planCard_pink .imagesHighlight { background:rgba(255,110,180,0.07);border-color:rgba(255,110,180,0.3); }
+.planCard_blue .imagesHighlight { background:rgba(56,189,248,0.07);border-color:rgba(56,189,248,0.3); }
+.imagesCount { font-family:"Fredoka One",cursive;font-size:28px;color:#7c3aed; }
+.planCard_pink .imagesCount { color:#db2777; }
+.planCard_blue .imagesCount { color:#0284c7; }
+.imagesLabel { font-size:13px;font-weight:700;color:#9d6fb8; }
+
+.featureList { list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;flex:1; }
+.featureItem { display:flex;align-items:flex-start;gap:10px;font-size:13.5px;font-weight:600;color:#4c1d95; }
+.featureItemDisabled { color:#c4b5d4;text-decoration:line-through;text-decoration-color:#ddd6fe; }
+.featureItemHighlight { font-weight:800;color:#7c3aed; }
+.planCard_pink .featureItemHighlight { color:#db2777; }
+.planCard_blue .featureItemHighlight { color:#0284c7; }
+
+.featureIcon { width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;margin-top:1px; }
+.featureItem:not(.featureItemDisabled) .featureIcon { background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(255,110,180,0.15));color:#7c3aed; }
+.planCard_pink .featureItem:not(.featureItemDisabled) .featureIcon { background:rgba(255,110,180,0.12);color:#db2777; }
+.planCard_blue .featureItem:not(.featureItemDisabled) .featureIcon { background:rgba(56,189,248,0.12);color:#0284c7; }
+.featureItemDisabled .featureIcon { background:rgba(196,181,212,0.15);color:#c4b5d4; }
+
+.planBtn { width:100%;padding:14px;border:none;border-radius:16px;font-family:"Fredoka One",cursive;font-size:17px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;margin-top:auto; }
+.planBtn_blue { background:linear-gradient(135deg,#38bdf8,#0284c7);color:white;box-shadow:0 6px 20px rgba(56,189,248,0.3); }
+.planBtn_blue:hover { transform:translateY(-2px);box-shadow:0 10px 28px rgba(56,189,248,0.4); }
+.planBtn_purple { background:linear-gradient(135deg,#ff6eb4,#a855f7,#38bdf8);background-size:200%;animation:gradShift 4s ease infinite;color:white;box-shadow:0 6px 20px rgba(168,85,247,0.35); }
+.planBtn_purple:hover { transform:translateY(-2px);box-shadow:0 10px 28px rgba(168,85,247,0.45); }
+.planBtn_pink { background:linear-gradient(135deg,#ff6eb4,#db2777);color:white;box-shadow:0 6px 20px rgba(255,110,180,0.3); }
+.planBtn_pink:hover { transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,110,180,0.4); }
+@keyframes gradShift { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+
+/* ─── Guarantee ─── */
+.guaranteeStrip { position:relative;z-index:1;text-align:center;padding:16px 24px 48px;font-size:13px;color:#9d6fb8;font-weight:700; }
+
+/* ─── FAQ ─── */
+.faqSection { position:relative;z-index:1;max-width:700px;margin:0 auto;padding:0 24px 80px; }
+.faqTitle { font-family:"Fredoka One",cursive;font-size:32px;color:#3b1d6e;text-align:center;margin-bottom:32px; }
+.faqList { display:flex;flex-direction:column;gap:12px; }
+.faqItem { background:rgba(255,255,255,0.7);backdrop-filter:blur(12px);border:1.5px solid rgba(168,85,247,0.12);border-radius:18px;overflow:hidden;transition:border-color 0.2s,box-shadow 0.2s; }
+.faqItemOpen { border-color:rgba(168,85,247,0.3);box-shadow:0 6px 24px rgba(168,85,247,0.1); }
+.faqQuestion { width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;background:none;border:none;font-family:"Nunito",sans-serif;font-size:15px;font-weight:800;color:#3b1d6e;text-align:left;cursor:pointer;transition:color 0.2s; }
+.faqQuestion:hover { color:#7c3aed; }
+.faqChevron { font-size:14px;color:#c084fc;flex-shrink:0;transition:transform 0.25s;display:inline-block; }
+.faqChevronOpen { transform:rotate(180deg);color:#a855f7; }
+.faqAnswer { padding:0 22px 18px;animation:slideDown 0.2s ease; }
+.faqAnswer p { font-size:14px;color:#7c6f8a;font-weight:600;line-height:1.7; }
+@keyframes slideDown { from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)} }
+
+/* ─── Footer ─── */
+.footer { position:relative;z-index:1;text-align:center;padding:24px;border-top:1px solid rgba(168,85,247,0.1);font-size:13px;color:#c084fc;font-weight:600; }
