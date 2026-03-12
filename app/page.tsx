@@ -164,7 +164,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className={styles.hero}>
-        <div className={styles.heroTag}><span>🚀</span> {t.hero_tag}</div>
+        {/* <div className={styles.heroTag}><span>🚀</span> {t.hero_tag}</div> */}
         <h1 className={styles.heroTitle}>
           <span className={styles.gradientText}>{t.hero_title_transform}</span>{" "}
           {t.hero_title_mid}{" "}
